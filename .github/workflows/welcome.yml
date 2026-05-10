@@ -1,9 +1,9 @@
-name: Post Welcome comment
+name: Post welcome comment
 on:
-  pull_request: 
+  pull_request:
     types: [opened]
-  Permissions:
-    pull-requests: write
+permissions:
+  pull-requests: write
 jobs:
   welcome:
     name: Post welcome comment
@@ -13,3 +13,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
+          
